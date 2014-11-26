@@ -1,0 +1,4 @@
+phpThumb
+========
+
+phpThumb for CakePHP
