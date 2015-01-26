@@ -14,14 +14,17 @@ Last tested on CakePHP 2.6.1
 
 2) Where you want to use phpThumb, just use:
 
+```
 App::import('Vendor', 'phpThumb', array('file' => 'phpThumb' . DS . 'phpthumb.php'));
+```
 
 For example:
 
+```
 App::import('Vendor', 'phpThumb', array('file' => 'phpThumb' . DS . 'phpthumb.php'));
 
 $phpThumb = new phpthumb();
-$phpThumb->setSourceFilename($saveAs);
+$phpThumb->setSourceFilename($pathToFile);
 $phpThumb->setCacheDirectory(CACHE);
 $phpThumb->setParameter('w', $options['width']);
 $phpThumb->setParameter('h', $options['height']);
@@ -37,3 +40,9 @@ if ($phpThumb->generateThumbnail()) {
 } else {
 	return false;
 }
+```
+
+Where
+$pathToFile is the current path to the file - if uploading an image, this could be the tmp_name
+
+$destination is where you want to save the image too.
